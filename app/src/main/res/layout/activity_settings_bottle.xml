@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsBottleActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bg" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977"
+        app:srcCompat="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Daily Intake"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="378dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072"
+        app:srcCompat="@drawable/intake_area" />
+
+    <EditText
+        android:id="@+id/setIntakeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_medium"
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:text="0"
+        android:textColor="#69B2F2"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        tools:text="0" />
+
+    <ScrollView
+        android:layout_width="367dp"
+        android:layout_height="425dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.16000003">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/firstBotleElement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="-171dp"
+                tools:layout_editor_absoluteY="604dp">
+
+                <ImageView
+                    android:id="@+id/imageView10first"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:srcCompat="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/imageView11first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/glass_size_area" />
+
+                <ImageButton
+                    android:id="@+id/firstButtonCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="270dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="1"
+                    app:srcCompat="@drawable/ic_check_mark_clean" />
+
+                <ImageButton
+                    android:id="@+id/firstButtonDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="firstBottle"
+                    app:srcCompat="@drawable/ic_trash" />
+
+                <EditText
+                    android:id="@+id/firstEditTextText"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@null"
+                    android:contentDescription="firstBottle"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="#69B2F2"
+                    android:textSize="24sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/secondBotleElement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="-171dp"
+                tools:layout_editor_absoluteY="604dp">
+
+                <ImageView
+                    android:id="@+id/imageView10second"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:contentDescription="2"
+                    app:srcCompat="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/imageView11second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/glass_size_area" />
+
+                <ImageButton
+                    android:id="@+id/secondButtonCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="270dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="2"
+                    app:srcCompat="@drawable/ic_check_mark_clean" />
+
+                <ImageButton
+                    android:id="@+id/secondButtonDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="secondBottle"
+                    app:srcCompat="@drawable/ic_trash" />
+
+                <EditText
+                    android:id="@+id/secondEditTextText"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@null"
+                    android:contentDescription="secondBottle"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="#69B2F2"
+                    android:textSize="24sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/thirdBotleElement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="-171dp"
+                tools:layout_editor_absoluteY="604dp">
+
+                <ImageView
+                    android:id="@+id/imageView10third"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:srcCompat="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/imageView11third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/glass_size_area" />
+
+                <ImageButton
+                    android:id="@+id/thirdButtonCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="270dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="3"
+                    app:srcCompat="@drawable/ic_check_mark_clean" />
+
+                <ImageButton
+                    android:id="@+id/thirdButtonDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="thirdBottle"
+                    app:srcCompat="@drawable/ic_trash" />
+
+                <EditText
+                    android:id="@+id/thirdEditTextText"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@null"
+                    android:contentDescription="thirdBottle"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="#69B2F2"
+                    android:textSize="24sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fourthBotleElement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="-171dp"
+                tools:layout_editor_absoluteY="604dp">
+
+                <ImageView
+                    android:id="@+id/imageView10fourth"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:srcCompat="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/imageView11fourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/glass_size_area" />
+
+                <ImageButton
+                    android:id="@+id/fourthButtonCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="270dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="4"
+                    app:srcCompat="@drawable/ic_check_mark_clean" />
+
+                <ImageButton
+                    android:id="@+id/fourthButtonDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="fourthBottle"
+                    app:srcCompat="@drawable/ic_trash" />
+
+                <EditText
+                    android:id="@+id/fourthEditTextText"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@null"
+                    android:contentDescription="fourthBottle"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="#69B2F2"
+                    android:textSize="24sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fifthBotleElement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="-171dp"
+                tools:layout_editor_absoluteY="604dp">
+
+                <ImageView
+                    android:id="@+id/imageView10fifth"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:srcCompat="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/imageView11fifth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/glass_size_area" />
+
+                <ImageButton
+                    android:id="@+id/fifthButtonCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="270dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="5"
+                    app:srcCompat="@drawable/ic_check_mark_clean" />
+
+                <ImageButton
+                    android:id="@+id/fifthButtonDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="fifthBottle"
+                    app:srcCompat="@drawable/ic_trash" />
+
+                <EditText
+                    android:id="@+id/fifthEditTextText"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@null"
+                    android:contentDescription="fifthBottle"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="#69B2F2"
+                    android:textSize="24sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/sixthBotleElement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="-171dp"
+                tools:layout_editor_absoluteY="604dp">
+
+                <ImageView
+                    android:id="@+id/imageView10sixth"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:srcCompat="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/imageView11sixth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/glass_size_area" />
+
+                <ImageButton
+                    android:id="@+id/sixthButtonCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="270dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="6"
+                    app:srcCompat="@drawable/ic_check_mark_clean" />
+
+                <ImageButton
+                    android:id="@+id/sixthButtonDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="sixthBottle"
+                    app:srcCompat="@drawable/ic_trash" />
+
+                <EditText
+                    android:id="@+id/sixthEditTextText"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@null"
+                    android:contentDescription="sixthBottle"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="#69B2F2"
+                    android:textSize="24sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/seventhBotleElement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="-171dp"
+                tools:layout_editor_absoluteY="604dp">
+
+                <ImageView
+                    android:id="@+id/imageView10seventh"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:srcCompat="@android:color/transparent" />
+
+                <ImageView
+                    android:id="@+id/imageView11seventh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/glass_size_area" />
+
+                <ImageButton
+                    android:id="@+id/seventhButtonCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="270dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="7"
+                    app:srcCompat="@drawable/ic_check_mark_clean" />
+
+                <ImageButton
+                    android:id="@+id/seventhButtonDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="seventhBottle"
+                    app:srcCompat="@drawable/ic_trash" />
+
+                <EditText
+                    android:id="@+id/seventhEditTextText"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@null"
+                    android:contentDescription="seventhBottle"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textColor="#69B2F2"
+                    android:textSize="24sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/addNewSizeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.145"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Glass Size"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.27" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

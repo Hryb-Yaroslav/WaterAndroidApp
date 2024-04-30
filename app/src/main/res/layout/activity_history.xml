@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryActivity">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/bg" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977"
+        app:srcCompat="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/monthsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="TextView"
+        android:textColor="#FEFEFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <ImageButton
+        android:id="@+id/nextMounthButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintStart_toEndOf="@+id/monthsText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047"
+        app:srcCompat="@drawable/ic_arrow_right" />
+
+    <ImageButton
+        android:id="@+id/previousMonthButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/monthsText"
+        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047"
+        app:srcCompat="@drawable/ic_arrow_left" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="316dp"
+        android:layout_height="225dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monthsText"
+        app:layout_constraintVertical_bias="0.023">
+        <!--        app:layout_constraintVertical_bias="0.036">-->
+
+
+        <ImageButton
+            android:id="@+id/day1Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="1"
+            android:scaleType="fitXY"
+            app:layout_column="0"
+            app:layout_row="0"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day1Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="1"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+
+        <ImageButton
+            android:id="@+id/day2Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="2"
+            android:scaleType="fitXY"
+            app:layout_column="1"
+            app:layout_row="0"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="2"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="1"
+            app:layout_row="0" />
+
+
+        <ImageButton
+            android:id="@+id/day3Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="3"
+            android:scaleType="fitXY"
+            app:layout_column="2"
+            app:layout_row="0"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day3Text"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="3"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="2"
+            app:layout_row="0" />
+
+
+        <ImageButton
+            android:id="@+id/day4Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="4"
+            android:scaleType="fitXY"
+            app:layout_column="3"
+            app:layout_row="0"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day4Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="4"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="3"
+            app:layout_row="0" />
+
+
+        <ImageButton
+            android:id="@+id/day5Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="5"
+            android:scaleType="fitXY"
+            app:layout_column="4"
+            app:layout_row="0"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day5Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="5"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="4"
+            app:layout_row="0" />
+
+
+        <ImageButton
+            android:id="@+id/day6Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="6"
+            android:scaleType="fitXY"
+            app:layout_column="5"
+            app:layout_row="0"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day6Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="6"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="5"
+            app:layout_row="0" />
+
+        <ImageButton
+            android:id="@+id/day7Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="7"
+            android:scaleType="fitXY"
+            app:layout_column="6"
+            app:layout_row="0"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day7Text"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="7"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="6"
+            app:layout_row="0" />
+
+
+        <ImageButton
+            android:id="@+id/day8Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="8"
+            android:scaleType="fitXY"
+            app:layout_column="0"
+            app:layout_row="1"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day8Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="8"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="0"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/day9Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="9"
+            android:scaleType="fitXY"
+            app:layout_column="1"
+            app:layout_row="1"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day9Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="9"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="1"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/day10Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="10"
+            android:scaleType="fitXY"
+            app:layout_column="2"
+            app:layout_row="1"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day10Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="10"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="2"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/day11Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="11"
+            android:scaleType="fitXY"
+            app:layout_column="3"
+            app:layout_row="1"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day11Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="11"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="3"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/day12Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="12"
+            android:scaleType="fitXY"
+            app:layout_column="4"
+            app:layout_row="1"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day12Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="12"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="4"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/day13Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="13"
+            android:scaleType="fitXY"
+            app:layout_column="5"
+            app:layout_row="1"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day13Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="13"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="5"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/day14Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="14"
+            android:scaleType="fitXY"
+            app:layout_column="6"
+            app:layout_row="1"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day14Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="14"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="6"
+            app:layout_row="1" />
+
+
+        <ImageButton
+            android:id="@+id/day15Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="15"
+            android:scaleType="fitXY"
+            app:layout_column="0"
+            app:layout_row="2"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day15Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="15"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="0"
+            app:layout_row="2" />
+
+        <ImageButton
+            android:id="@+id/day16Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="16"
+            android:scaleType="fitXY"
+            app:layout_column="1"
+            app:layout_row="2"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day16Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="16"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="1"
+            app:layout_row="2" />
+
+        <ImageButton
+            android:id="@+id/day17Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="17"
+            android:scaleType="fitXY"
+            app:layout_column="2"
+            app:layout_row="2"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day17Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="17"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="2"
+            app:layout_row="2" />
+
+        <ImageButton
+            android:id="@+id/day18Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="18"
+            android:scaleType="fitXY"
+            app:layout_column="3"
+            app:layout_row="2"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day18Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="18"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="3"
+            app:layout_row="2" />
+
+        <ImageButton
+            android:id="@+id/day19Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="19"
+            android:scaleType="fitXY"
+            app:layout_column="4"
+            app:layout_row="2"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day19Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="19"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="4"
+            app:layout_row="2" />
+
+
+        <ImageButton
+            android:id="@+id/day20Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="20"
+            android:scaleType="fitXY"
+            app:layout_column="5"
+            app:layout_row="2"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day20Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="20"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="5"
+            app:layout_row="2" />
+
+        <ImageButton
+            android:id="@+id/day21Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="21"
+            android:scaleType="fitXY"
+            app:layout_column="6"
+            app:layout_row="2"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day21Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="21"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="6"
+            app:layout_row="2" />
+
+
+        <ImageButton
+            android:id="@+id/day22Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="22"
+            android:scaleType="fitXY"
+            app:layout_column="0"
+            app:layout_row="3"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day22Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="22"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="0"
+            app:layout_row="3" />
+
+        <ImageButton
+            android:id="@+id/day23Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="23"
+            android:scaleType="fitXY"
+            app:layout_column="1"
+            app:layout_row="3"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day23Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="23"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="1"
+            app:layout_row="3" />
+
+        <ImageButton
+            android:id="@+id/day24Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="24"
+            android:scaleType="fitXY"
+            app:layout_column="2"
+            app:layout_row="3"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day24Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="24"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="2"
+            app:layout_row="3" />
+
+        <ImageButton
+            android:id="@+id/day25Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="25"
+            android:scaleType="fitXY"
+            app:layout_column="3"
+            app:layout_row="3"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day25Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="25"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="3"
+            app:layout_row="3" />
+
+        <ImageButton
+            android:id="@+id/day26Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="26"
+            android:scaleType="fitXY"
+            app:layout_column="4"
+            app:layout_row="3"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day26Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="26"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="4"
+            app:layout_row="3" />
+
+
+        <ImageButton
+            android:id="@+id/day27Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="27"
+            android:scaleType="fitXY"
+            app:layout_column="5"
+            app:layout_row="3"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day27Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="27"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="5"
+            app:layout_row="3" />
+
+        <ImageButton
+            android:id="@+id/day28Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="28"
+            android:scaleType="fitXY"
+            app:layout_column="6"
+            app:layout_row="3"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day28Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="28"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="6"
+            app:layout_row="3" />
+
+
+        <ImageButton
+            android:id="@+id/day29Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="29"
+            android:scaleType="fitXY"
+            app:layout_column="0"
+            app:layout_row="4"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day29Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="29"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="0"
+            app:layout_row="4" />
+
+        <ImageButton
+            android:id="@+id/day30Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="30"
+            android:scaleType="fitXY"
+            app:layout_column="1"
+            app:layout_row="4"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+
+        <TextView
+            android:id="@+id/day30Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="30"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="1"
+            app:layout_row="4" />
+
+        <ImageButton
+            android:id="@+id/day31Button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="31"
+            android:scaleType="fitXY"
+            app:layout_column="2"
+            app:layout_row="4"
+            app:srcCompat="@drawable/ic_calendar_bloc_inactive" />
+
+        <TextView
+            android:id="@+id/day31Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="31"
+            android:textColor="#63AEEF"
+            android:textSize="20sp"
+            app:layout_column="2"
+            app:layout_row="4" />
+
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <ImageView
+        android:id="@+id/progresImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+        app:layout_constraintVertical_bias="0.329"
+        app:srcCompat="@drawable/ic_progress_0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
