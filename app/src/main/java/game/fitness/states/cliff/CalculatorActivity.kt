@@ -20,7 +20,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 
-class QuestionActivity : AppCompatActivity() {
+class CalculatorActivity : AppCompatActivity() {
     private var goToNewActivity = false
     private var musicService: MusicService? = null
     private var isBound = false
@@ -62,7 +62,7 @@ class QuestionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_question)
+        setContentView(R.layout.activity_calculator)
         val click = MediaPlayer.create(this, R.raw.button_sound)
         val serviceIntent = Intent(this, MusicService::class.java)
         startService(serviceIntent)
@@ -72,7 +72,7 @@ class QuestionActivity : AppCompatActivity() {
         click.setVolume(clickSound, clickSound)
 
 
-        val buttonBack: ImageButton = findViewById(R.id.backButton3)
+        val buttonBack: ImageButton = findViewById(R.id.backButton31)
 
 
         buttonBack.setOnClickListener {

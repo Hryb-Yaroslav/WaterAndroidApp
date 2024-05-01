@@ -104,6 +104,8 @@ class MainActivity : AppCompatActivity() {
         val buttonExit: ImageButton = findViewById(R.id.exitButton)
         val buttonSevenDaysHistory: ImageButton = findViewById(R.id.sevenDaysHistoryButton)
         val buttonAccount: ImageButton = findViewById(R.id.accountButton)
+        val buttonQuestion: ImageButton = findViewById(R.id.questButton)
+        val buttonCalculator: ImageButton = findViewById(R.id.calculatorButton)
 
         checkWaterState()
 
@@ -148,6 +150,24 @@ class MainActivity : AppCompatActivity() {
             click.seekTo(0)
             goToNewActivity = true
             val intent = Intent(this, AccountActivity::class.java)
+            startActivity(intent)
+            finish()
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+        buttonCalculator.setOnClickListener {
+            click.start()
+            click.seekTo(0)
+            goToNewActivity = true
+            val intent = Intent(this, CalculatorActivity::class.java)
+            startActivity(intent)
+            finish()
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+        buttonQuestion.setOnClickListener {
+            click.start()
+            click.seekTo(0)
+            goToNewActivity = true
+            val intent = Intent(this, QuestionActivity::class.java)
             startActivity(intent)
             finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
@@ -340,6 +360,8 @@ class MainActivity : AppCompatActivity() {
         val buttonSettings: ImageButton = findViewById(R.id.settingsButton)
         val buttonMenu: ImageButton = findViewById(R.id.menuButton)
         val buttonAccount: ImageButton = findViewById(R.id.accountButton)
+        val buttonQuest: ImageButton = findViewById(R.id.questButton)
+        val buttonCalculator: ImageButton = findViewById(R.id.calculatorButton)
 
         val distance = buttonHistory.height + (buttonHistory.height / 5)
 
@@ -349,33 +371,49 @@ class MainActivity : AppCompatActivity() {
         menuAnim.fillAfter = true
         menuAnim.interpolator = DecelerateInterpolator()
 
-        val historyAnim = ValueAnimator.ofFloat(buttonHistory.y, buttonHistory.y - distance * 3)
+        val historyAnim = ValueAnimator.ofFloat(buttonHistory.y, buttonHistory.y - distance * 4)
         historyAnim.duration = 500
         historyAnim.addUpdateListener {animation ->
             val value = animation.animatedValue as Float
             buttonHistory.y = value
         }
 
-        val accountAnim = ValueAnimator.ofFloat(buttonAccount.y, buttonAccount.y - distance * 2)
+        val accountAnim = ValueAnimator.ofFloat(buttonAccount.y, buttonAccount.y - distance * 3)
         accountAnim.duration = 500
         accountAnim.addUpdateListener {animation ->
             val value = animation.animatedValue as Float
             buttonAccount.y = value
         }
 
-        val settingsBottleAnim = ValueAnimator.ofFloat(buttonSettingsBottle.y, buttonSettingsBottle.y - distance * 5)
+        val settingsBottleAnim = ValueAnimator.ofFloat(buttonSettingsBottle.y, buttonSettingsBottle.y - distance * 7)
         settingsBottleAnim.duration = 500
         settingsBottleAnim.addUpdateListener {animation ->
             val value = animation.animatedValue as Float
             buttonSettingsBottle.y = value
         }
 
-        val sevenDaysHistoryAnim = ValueAnimator.ofFloat(buttonSevenDaysHistory.y, buttonSevenDaysHistory.y - distance * 4)
+        val calculatorAnim = ValueAnimator.ofFloat(buttonCalculator.y, buttonCalculator.y - distance * 6)
+        calculatorAnim.duration = 500
+        calculatorAnim.addUpdateListener {animation ->
+            val value = animation.animatedValue as Float
+            buttonCalculator.y = value
+        }
+
+        val sevenDaysHistoryAnim = ValueAnimator.ofFloat(buttonSevenDaysHistory.y, buttonSevenDaysHistory.y - distance * 5)
         sevenDaysHistoryAnim.duration = 500
         sevenDaysHistoryAnim.addUpdateListener {animation ->
             val value = animation.animatedValue as Float
             buttonSevenDaysHistory.y = value
         }
+
+
+        val questAnim = ValueAnimator.ofFloat(buttonQuest.y, buttonQuest.y - distance * 2)
+        questAnim.duration = 500
+        questAnim.addUpdateListener {animation ->
+            val value = animation.animatedValue as Float
+            buttonQuest.y = value
+        }
+
         val settingsAnim = ValueAnimator.ofFloat(buttonSettings.y, buttonSettings.y - distance)
         settingsAnim.duration = 500
         settingsAnim.addUpdateListener {animation ->
@@ -396,6 +434,8 @@ class MainActivity : AppCompatActivity() {
         settingsBottleAnim.start()
         sevenDaysHistoryAnim.start()
         accountAnim.start()
+        questAnim.start()
+        calculatorAnim.start()
     }
 
     private fun hideItems(){
@@ -405,6 +445,8 @@ class MainActivity : AppCompatActivity() {
         val buttonSettings: ImageButton = findViewById(R.id.settingsButton)
         val buttonMenu: ImageButton = findViewById(R.id.menuButton)
         val buttonAccount: ImageButton = findViewById(R.id.accountButton)
+        val buttonQuest: ImageButton = findViewById(R.id.questButton)
+        val buttonCalculator: ImageButton = findViewById(R.id.calculatorButton)
 
         val distance = buttonHistory.height + (buttonHistory.height / 5)
 
@@ -415,32 +457,48 @@ class MainActivity : AppCompatActivity() {
         menuAnim.interpolator = DecelerateInterpolator()
 
 
-        val settingsBottleAnim = ValueAnimator.ofFloat(buttonSettingsBottle.y, buttonSettingsBottle.y + distance * 5)
+        val settingsBottleAnim = ValueAnimator.ofFloat(buttonSettingsBottle.y, buttonSettingsBottle.y + distance * 7)
         settingsBottleAnim.duration = 500
         settingsBottleAnim.addUpdateListener {animation ->
             val value = animation.animatedValue as Float
             buttonSettingsBottle.y = value
         }
 
-        val sevenDaysHistoryAnim = ValueAnimator.ofFloat(buttonSevenDaysHistory.y, buttonSevenDaysHistory.y + distance * 4)
+        val calculatorAnim = ValueAnimator.ofFloat(buttonCalculator.y, buttonCalculator.y + distance * 6)
+        calculatorAnim.duration = 500
+        calculatorAnim.addUpdateListener {animation ->
+            val value = animation.animatedValue as Float
+            buttonCalculator.y = value
+        }
+
+
+        val sevenDaysHistoryAnim = ValueAnimator.ofFloat(buttonSevenDaysHistory.y, buttonSevenDaysHistory.y + distance * 5)
         sevenDaysHistoryAnim.duration = 500
         sevenDaysHistoryAnim.addUpdateListener {animation ->
             val value = animation.animatedValue as Float
             buttonSevenDaysHistory.y = value
         }
 
-        val historyAnim = ValueAnimator.ofFloat(buttonHistory.y, buttonHistory.y + distance * 3)
+        val historyAnim = ValueAnimator.ofFloat(buttonHistory.y, buttonHistory.y + distance * 4)
         historyAnim.duration = 500
         historyAnim.addUpdateListener {animation ->
             val value = animation.animatedValue as Float
             buttonHistory.y = value
         }
 
-        val accountAnim = ValueAnimator.ofFloat(buttonAccount.y, buttonAccount.y + distance * 2)
+        val accountAnim = ValueAnimator.ofFloat(buttonAccount.y, buttonAccount.y + distance * 3)
         accountAnim.duration = 500
         accountAnim.addUpdateListener {animation ->
             val value = animation.animatedValue as Float
             buttonAccount.y = value
+        }
+
+
+        val questAnim = ValueAnimator.ofFloat(buttonQuest.y, buttonQuest.y + distance * 2)
+        questAnim.duration = 500
+        questAnim.addUpdateListener {animation ->
+            val value = animation.animatedValue as Float
+            buttonQuest.y = value
         }
 
         val settingsAnim = ValueAnimator.ofFloat(buttonSettings.y, buttonSettings.y + distance)
@@ -462,6 +520,8 @@ class MainActivity : AppCompatActivity() {
         settingsBottleAnim.start()
         sevenDaysHistoryAnim.start()
         accountAnim.start()
+        questAnim.start()
+        calculatorAnim.start()
 
     }
 

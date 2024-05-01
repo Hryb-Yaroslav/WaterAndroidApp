@@ -20,7 +20,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 
-class AuthenticationActivity : AppCompatActivity() {
+class QuestionActivity : AppCompatActivity() {
     private var goToNewActivity = false
     private var musicService: MusicService? = null
     private var isBound = false
@@ -62,7 +62,7 @@ class AuthenticationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_authentication)
+        setContentView(R.layout.activity_question)
         val click = MediaPlayer.create(this, R.raw.button_sound)
         val serviceIntent = Intent(this, MusicService::class.java)
         startService(serviceIntent)
@@ -71,147 +71,19 @@ class AuthenticationActivity : AppCompatActivity() {
         val clickSound = sharedPreferencesForMusic.getFloat("buttonSound", 1f)
         click.setVolume(clickSound, clickSound)
 
-        val passField: EditText = findViewById(R.id.setPasswordText)
-        val loginField: EditText = findViewById(R.id.setLoginText)
 
-        val textLogin: TextView = findViewById(R.id.textView9)
-        val textCreateAccount: TextView = findViewById(R.id.textView90)
-        val textCreate: TextView = findViewById(R.id.textView901)
-        val textBeck: TextView = findViewById(R.id.textView902)
-
-        val buttonEye: ImageButton = findViewById(R.id.eyeButton)
-        val buttonLogin: ImageButton = findViewById(R.id.loginButton)
-        val buttonCreateAccount: ImageButton = findViewById(R.id.createAccountButton)
-        val buttonCreate: ImageButton = findViewById(R.id.logOutButton)
-        val buttonBack: ImageButton = findViewById(R.id.backButtonlog)
-
-        val buttonExit: ImageButton = findViewById(R.id.exitButton)
+        val buttonBack: ImageButton = findViewById(R.id.backButton3)
 
 
-        val sharedPreferencesForCurrentUser = getSharedPreferences("UserData", Context.MODE_PRIVATE)
-        val getSharedPreferencesForCurrentUsers = sharedPreferencesForCurrentUser.getString("currentData", "")
-        if (getSharedPreferencesForCurrentUsers != ""){
-            val name = getSharedPreferencesForCurrentUsers?.split(":")?.get(0)
-            Toast.makeText(this, "Welcome Back $name", Toast.LENGTH_SHORT).show()
+        buttonBack.setOnClickListener {
+            click.start()
+            click.seekTo(0)
             goToNewActivity = true
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             finish()
-        }
-
-
-        buttonEye.setOnClickListener {
-            eyeState = if (eyeState) {
-                buttonEye.setImageResource(R.drawable.ic_eye)
-                passField.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-                passField.setSelection(passField.text.length)
-                false
-            } else {
-                buttonEye.setImageResource(R.drawable.ic_eye2)
-                passField.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-                passField.setSelection(passField.text.length)
-                true
-            }
-        }
-        buttonLogin.setOnClickListener {
-            click.start()
-            click.seekTo(0)
-            if (passField.text.toString() != "" && loginField.text.toString() != "") {
-                val sharedPreferencesForUsers = getSharedPreferences("UsersData", Context.MODE_PRIVATE)
-                val getSharedPreferencesForUsersData = sharedPreferencesForUsers.getStringSet("data", emptySet())
-
-                var check = true
-                getSharedPreferencesForUsersData?.forEach {
-                    val data = it.split(":")
-                    if (data[0] == loginField.text.toString() && data[1] == passField.text.toString()){
-                        check = false
-                        Toast.makeText(this, "Uou Enter As " + data[0], Toast.LENGTH_SHORT).show()
-
-                        val editor = sharedPreferencesForCurrentUser.edit()
-                        editor.putString("currentData", it)
-                        editor.apply()
-
-                        goToNewActivity = true
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                        finish()
-                    }
-                }
-                if (check) Toast.makeText(this, "Wrong Login Or Password", Toast.LENGTH_SHORT).show()
-            }
-            else if (loginField.text.toString() == "") Toast.makeText(this, "Enter Login", Toast.LENGTH_SHORT).show()
-            else if (passField.text.toString() == "") Toast.makeText(this, "Enter Password", Toast.LENGTH_SHORT).show()
-            else Toast.makeText(this, "Incorrect data", Toast.LENGTH_SHORT).show()
-        }
-        buttonCreate.setOnClickListener {
-            if (passField.text.toString() != "" && loginField.text.toString() != "") {
-                val sharedPreferencesForUsers = getSharedPreferences("UsersData", Context.MODE_PRIVATE)
-                val getSharedPreferencesForUsersData = sharedPreferencesForUsers.getStringSet("data", emptySet())
-
-                val users = getSharedPreferencesForUsersData?.toMutableSet()
-
-                val userData = loginField.text.toString() + ":" + passField.text.toString()
-
-                users?.add(userData)
-
-                val editor = sharedPreferencesForUsers.edit()
-                editor.putStringSet("data", users?.toSet())
-                editor.apply()
-
-                Toast.makeText(this, "You Create Account With Name " + loginField.text.toString(), Toast.LENGTH_SHORT).show()
-
-                loginField.text.clear()
-                passField.text.clear()
-            }
-            else if (loginField.text.toString() == "") Toast.makeText(this, "Enter Login", Toast.LENGTH_SHORT).show()
-            else if (passField.text.toString() == "") Toast.makeText(this, "Enter Password", Toast.LENGTH_SHORT).show()
-            else Toast.makeText(this, "Incorrect data", Toast.LENGTH_SHORT).show()
-        }
-        buttonCreateAccount.setOnClickListener {
-            textLogin.isVisible = false
-            buttonLogin.isVisible = false
-
-            textCreateAccount.isVisible = false
-            buttonCreateAccount.isVisible = false
-
-            textCreate.isVisible = true
-            buttonCreate.isVisible = true
-
-            textBeck.isVisible = true
-            buttonBack.isVisible = true
-
-            loginField.hint = "Create Login"
-            passField.hint = "Create Password"
-        }
-        buttonBack.setOnClickListener {
-
-            textLogin.isVisible = true
-            buttonLogin.isVisible = true
-
-            textCreateAccount.isVisible = true
-            buttonCreateAccount.isVisible = true
-
-            textCreate.isVisible = false
-            buttonCreate.isVisible = false
-
-            textBeck.isVisible = false
-            buttonBack.isVisible = false
-
-            loginField.hint = "Enter Login"
-            passField.hint = "Enter Password"
-        }
-
-        buttonExit.setOnClickListener {
-            click.start()
-            click.seekTo(0)
-            stopService(serviceIntent)
-            finishAffinity()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
-
-
         hideUi()
     }
 
