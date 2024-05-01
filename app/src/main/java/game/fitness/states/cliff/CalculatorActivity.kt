@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.os.IBinder
 import android.text.InputType
 import android.view.View
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -59,6 +60,7 @@ class CalculatorActivity : AppCompatActivity() {
 
 
     var eyeState = false
+    var currentAge = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,10 +73,70 @@ class CalculatorActivity : AppCompatActivity() {
         val clickSound = sharedPreferencesForMusic.getFloat("buttonSound", 1f)
         click.setVolume(clickSound, clickSound)
 
+        val sharedPreferencesForBrigthness = getSharedPreferences("Brigthness", Context.MODE_PRIVATE)
+        val Brigthness = sharedPreferencesForBrigthness.getFloat("brigthnessValue", 1f)
+        val windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val layoutParams = window.attributes
+        layoutParams.screenBrightness = Brigthness
+        window.attributes = layoutParams
+
+
+        val enterTextWeight: EditText = findViewById(R.id.setWeightText)
 
         val buttonBack: ImageButton = findViewById(R.id.backButton31)
+        val buttonCalculator: ImageButton = findViewById(R.id.calculateButton)
+        val buttonSetNewIntake: ImageButton = findViewById(R.id.setNewIntakeButton)
+        val buttonSetAge0: ImageButton = findViewById(R.id.under18Button)
+        val buttonSetAge1: ImageButton = findViewById(R.id.q18www39Button)
+        val buttonSetAge2: ImageButton = findViewById(R.id.after40Button)
+
+        val textResult: TextView = findViewById(R.id.textView571)
 
 
+        buttonSetAge0.setOnClickListener {
+            buttonSetAge0.setImageResource(R.drawable.ic_check_mark_fill)
+            buttonSetAge1.setImageResource(R.drawable.ic_check_mark_clean)
+            buttonSetAge2.setImageResource(R.drawable.ic_check_mark_clean)
+            currentAge = 0
+        }
+        buttonSetAge1.setOnClickListener {
+            buttonSetAge0.setImageResource(R.drawable.ic_check_mark_clean)
+            buttonSetAge1.setImageResource(R.drawable.ic_check_mark_fill)
+            buttonSetAge2.setImageResource(R.drawable.ic_check_mark_clean)
+            currentAge = 1
+        }
+        buttonSetAge2.setOnClickListener {
+            buttonSetAge0.setImageResource(R.drawable.ic_check_mark_clean)
+            buttonSetAge1.setImageResource(R.drawable.ic_check_mark_clean)
+            buttonSetAge2.setImageResource(R.drawable.ic_check_mark_fill)
+            currentAge = 2
+        }
+
+        buttonCalculator.setOnClickListener {
+            click.start()
+            click.seekTo(0)
+            var res = when (currentAge) {
+                0 -> 800
+                1 -> 1700
+                else -> 3500
+            }
+            res += (enterTextWeight.text.toString().toInt() * 35) / 10
+
+            textResult.text = "$res"
+        }
+
+
+        buttonSetNewIntake.setOnClickListener {
+            val sharedPreferencesForCurrentUser = getSharedPreferences("UserData", Context.MODE_PRIVATE)
+            val userdata = sharedPreferencesForCurrentUser.getString("currentData", "")
+            val sharedPreferences = getSharedPreferences("Intake$userdata", Context.MODE_PRIVATE)
+
+            val editor = sharedPreferences.edit()
+            editor.putInt("maxIntake", textResult.text.toString().toInt())
+            editor.apply()
+            textResult.text = ""
+            Toast.makeText(this, "New Intake Has Been Added ", Toast.LENGTH_SHORT).show()
+        }
         buttonBack.setOnClickListener {
             click.start()
             click.seekTo(0)

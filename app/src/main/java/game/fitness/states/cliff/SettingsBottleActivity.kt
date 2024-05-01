@@ -9,16 +9,13 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
-import android.provider.Settings
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.ImageButton
-import android.widget.SeekBar
 import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -74,7 +71,7 @@ class SettingsBottleActivity : AppCompatActivity() {
 
         val buttonHistory: ImageButton = findViewById(R.id.backButton)
         val buttonAddNewSize: ImageButton = findViewById(R.id.addNewSizeButton)
-        val textSetIntake: EditText = findViewById(R.id.setIntakeText)
+        val textSetIntake: EditText = findViewById(R.id.setWeightText)
 
         val windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val layoutParams = window.attributes
@@ -125,6 +122,7 @@ class SettingsBottleActivity : AppCompatActivity() {
             goToNewActivity = true
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
         initializeAlleGlassSizeElements()

@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.os.IBinder
 import android.text.InputType
 import android.view.View
+import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.view.ViewCompat
@@ -71,6 +72,14 @@ class AccountActivity : AppCompatActivity() {
 
         val textName: TextView = findViewById(R.id.textView55)
         val textPass: TextView = findViewById(R.id.textView535)
+
+
+        val sharedPreferencesForBrigthness = getSharedPreferences("Brigthness", Context.MODE_PRIVATE)
+        val Brigthness = sharedPreferencesForBrigthness.getFloat("brigthnessValue", 1f)
+        val windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val layoutParams = window.attributes
+        layoutParams.screenBrightness = Brigthness
+        window.attributes = layoutParams
 
 
         val sharedPreferencesForCurrentUser = getSharedPreferences("UserData", Context.MODE_PRIVATE)

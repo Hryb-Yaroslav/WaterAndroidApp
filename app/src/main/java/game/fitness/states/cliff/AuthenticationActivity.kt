@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.os.IBinder
 import android.text.InputType
 import android.view.View
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -70,6 +71,14 @@ class AuthenticationActivity : AppCompatActivity() {
         val sharedPreferencesForMusic = getSharedPreferences("SoundState", Context.MODE_PRIVATE)
         val clickSound = sharedPreferencesForMusic.getFloat("buttonSound", 1f)
         click.setVolume(clickSound, clickSound)
+
+
+        val sharedPreferencesForBrigthness = getSharedPreferences("Brigthness", Context.MODE_PRIVATE)
+        val Brigthness = sharedPreferencesForBrigthness.getFloat("brigthnessValue", 1f)
+        val windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val layoutParams = window.attributes
+        layoutParams.screenBrightness = Brigthness
+        window.attributes = layoutParams
 
         val passField: EditText = findViewById(R.id.setPasswordText)
         val loginField: EditText = findViewById(R.id.setLoginText)

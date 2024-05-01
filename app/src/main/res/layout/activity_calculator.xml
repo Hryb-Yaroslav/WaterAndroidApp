@@ -20,6 +20,156 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/bg" />
 
+    <TextView
+        android:id="@+id/textView57112"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Select your age"
+        android:textColor="#DBECFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5711"
+        app:layout_constraintEnd_toEndOf="@+id/imageView30"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <TextView
+        android:id="@+id/textView57112age1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Under 18"
+        android:textColor="#DBECFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5711"
+        app:layout_constraintEnd_toEndOf="@+id/imageView30"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView57112"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/textView57112age2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="18 - 39 "
+        android:textColor="#DBECFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5711"
+        app:layout_constraintEnd_toEndOf="@+id/imageView30"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView57112age1"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/textView57112age3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="After 40"
+        android:textColor="#DBECFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5711"
+        app:layout_constraintEnd_toEndOf="@+id/imageView30"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView57112age2"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/textView5711"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Enter your weight"
+        android:textColor="#DBECFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView30"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367" />
+
+    <EditText
+        android:id="@+id/setWeightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_medium"
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/textView57110"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5711"
+        app:layout_constraintVertical_bias="0.04"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/textView57110"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Calculate"
+        android:textColor="#DBECFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView30"
+        app:layout_constraintEnd_toEndOf="@+id/imageView30"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <ImageButton
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintStart_toEndOf="@+id/textView57110"
+        app:layout_constraintTop_toBottomOf="@+id/setWeightText"
+        app:layout_constraintVertical_bias="0.879"
+        app:srcCompat="@drawable/ic_acsept" />
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="378dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.817"
+        app:srcCompat="@drawable/intake_area" />
+
+    <TextView
+        android:id="@+id/textView571"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="0"
+        android:textColor="#6CB4F4"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView30"
+        app:layout_constraintEnd_toEndOf="@+id/imageView30"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toTopOf="@+id/imageView30" />
+
     <ImageButton
         android:id="@+id/backButton31"
         android:layout_width="wrap_content"
@@ -32,6 +182,73 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.977"
         app:srcCompat="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/textView575110"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Set as new dayly intake"
+        android:textColor="#DBECFE"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView30"
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toStartOf="@+id/imageView30"
+        app:layout_constraintTop_toBottomOf="@+id/imageView30"
+        app:layout_constraintVertical_bias="0.241" />
+
+    <ImageButton
+        android:id="@+id/setNewIntakeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintStart_toEndOf="@+id/textView575110"
+        app:layout_constraintTop_toBottomOf="@+id/imageView30"
+        app:layout_constraintVertical_bias="0.223"
+        app:srcCompat="@drawable/ic_acsept" />
+
+    <ImageButton
+        android:id="@+id/under18Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView57112"
+        app:layout_constraintVertical_bias="0.041"
+        app:srcCompat="@drawable/ic_check_mark_clean" />
+
+    <ImageButton
+        android:id="@+id/q18www39Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView57112age1"
+        app:layout_constraintVertical_bias="0.034"
+        app:srcCompat="@drawable/ic_check_mark_clean" />
+
+    <ImageButton
+        android:id="@+id/after40Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView57112age2"
+        app:layout_constraintVertical_bias="0.028"
+        app:srcCompat="@drawable/ic_check_mark_clean" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
